@@ -1,0 +1,326 @@
+;Label;Split;Style;Action;Business Object;Tags
+0;Confirmation of room and inventory;; ;;;
+1;Confirmation of Booking;; ;;;
+2;Inventory Confirmed;; ;;;
+3;Enter Order Requirements;; ;;;
+4;Selecting Room and Time Slot;; ;;;
+5;Check Later;; ;;;
+6;Display rooms;; ;;;
+7;Show Alternative;; ;;;
+8;Entering Room Requirements;; ;;;
+9;Pay Bill;;;;;
+10;Inventory and Food Required;;;;;
+11;A student visits ACBT;;;;;
+12;Direct to ECU SL;;;;;
+13;Direct to ACBT;;;;;
+14;A student with OL results;;;;;
+15;A student with AL results or equivalent;;;;;
+16;A student visits ECU SL;;;;;
+17;repair the costume;;;;;
+18;prepare corresponding support clothing ;;;;;
+19;organize the costume;;;;;
+20;fetch all the costumes needed the day;;;;;
+21;check the costumes;;;;;
+22;Ensure another clinician observes vaccinees;;;;;
+23;Call in senior clinic clinician;;;;;
+24;Provide necessary treatment;;;;;
+25;Make observations;;;;;
+26;Bring to resuscitation area;;;;;
+27;Inform vaccinee of 15 observation;;;;;
+28;Inform vaccinee of 30 observation;;;;;
+29;Double check vaccinees clinical history;;;;;
+30;Inform vaccinee to observation;;;;;
+31;"Ship 
+product";;;;;
+32;"Archive 
+order";;;;;
+33;"Receive
+payment";;;;;
+34;"Emit 
+invoice";;;;;
+35;"Get 
+shipment 
+address";;;;;
+36;"Confirm 
+order";;;;;
+37;"Manufacture 
+product";;;;;
+38;"Obtain
+raw materials 
+from 
+Supplier 2";;;;;
+39;"Obtains
+raw materials 
+from 
+Supplier 1";;;;;
+40;"Request 
+raw materials 
+from 
+Supplier 1";;;;;
+41;"Request 
+raw materials 
+from 
+Supplier 2";;;;;
+42;"Retrieve 
+product 
+from 
+warehouse";;;;;
+43;"Check 
+raw materials 
+availability";;;;;
+44;"Check 
+stock 
+availability";;;;;
+45;Deploy of the kms;;;;;
+46;Develop the kms;;;;;
+47;Submit claim form;;;;;
+48;Attach supporting documents;;;;;
+49;Complete details;;;;;
+50;Access claim form;;;;;
+51;Request sending the advice;;;;;
+52;"Send 
+the advice to the customer";;;;;
+53;"Send 
+the advice";;;;;
+54;receive the request from The Lender;;;;;
+55;Inform accounting department;;;;;
+56;Send approved invoice;;;;;
+57;Approve invoice;;;;;
+58;Receive invoice;;;;;
+59;Inform supplier;;;;;
+60;Update accounts payable;;;;;
+61;Pay supplier;;;;;
+62;Fill in accounting information;;;;;
+63;Receive approved invoice;;;;;
+64;Send invoice;;;;;
+65;Inform training provider to plan a training;;;;;
+66;Check if internal training provider fulfils trainings courses for the last 3 month;;;;;
+67;Send participant list to external training provider;;;;;
+68;Send participant list;;;;;
+69;Update BK-Training-System with new training information;;;;;
+70;Send overview letter of internal trainings to all employees;;;;;
+71;Activate internal trainings;;;;;
+72;Send training description one month before  planned training;;;;;
+73; Sign up for a internal training (according to requirements);;;;;
+74;Sign up for external training once a year;;;;;
+75;FILL UP SO;;;;;
+76;COPY QUOTATION TO SO;;;;;
+77;REJECT PO;;;;;
+78;CREATE CUSTOMER MASTER DATA;;;;;
+79;CREATE SO;;;;;
+80;REJECT PO;;;;;
+81;CHECK STOCK AVAILABILITY;;;;;
+82;CREATE AND SEND QUOTATION;;;;;
+83;ANSWER INQUIRY;;;;;
+84;"SEND 
+INQUIRY";;;;;
+85;"Enter request into system
+
+(60)
+[30]";;;;;
+86;"Send copy to account payable
+
+(10)
+[10]";;;;;
+87;"Fax purchase order to vendor
+
+(10)
+[10]";;;;;
+88;"Generate purchase order
+(1)
+[1]";;;;;
+89;"Request new quote
+
+(1440)
+[60]";;;;;
+90;"Check quote validity
+
+(30)
+[15]";;;;;
+91;"Choose from database
+
+(5)
+[5]";;;;;
+92;"Choose from request
+
+(5)
+[5]";;;;;
+93;"Select Vendor
+(60)
+[30]";;;;;
+94;"Check for completion
+
+(120)
+[120]";;;;;
+95;Check timer;;;;;
+96;Create timer;;;;;
+97;Drop batch;;;;;
+98;"Update Global
+State";;;;;
+99;Publish block;;;;;
+100;Wait for publishing;;;;;
+101;Build new candidate block;;;;;
+102;Waiting for block inclusion;;;;;
+103;Validate batch;;;;;
+104;Waiting for process dependencies;;;;;
+105;"Transport tuna
+to processing plant";;;;;
+106;Store on ledger;;;;;
+107;Record catch;;;;;
+108;Get the food;;;;;
+109;Get the invoice;;;;;
+110;Pay the order;;;;;
+111;Order lunch;;;;;
+112;Go to chosen station;;;;;
+113;Go to 'bar';;;;;
+114;Charge money;;;;;
+115;"Check the balance
+(of ID card)";;;;;
+116;Choose food-type;;;;;
+117;Get the payment;;;;;
+118;Get invoice;;;;;
+119;Hand over the food;;;;;
+120;Prepare the food;;;;;
+121;Receive order;;;;;
+122;Hand over the drink;;;;;
+123;Get the payment;;;;;
+124;Give invoice;;;;;
+125;Receive order;;;;;
+126;Check the plane;;;;;
+127;Check information about plane;;;;;
+128;"use 
+1-step de-icing";;;;;
+129;Add details about procedure to plane information;;;;;
+130;"use
+2-step de-icing";;;;;
+131;Check information ;;;;;
+132;Do necessary paperwork;;;;;
+133;Put plane in queue de-icing;;;;;
+134;Allow the plane to start;;;;;
+135;Put plane in queue;;;;;
+136;Confirm the plane details;;;;;
+137;Initiate process ;;;;;
+138;Application submitted to admission database;;;;;
+139;Completed application and other documents;;;;;
+140;"go straight to classroom
+";;;;;
+141;cycle to school;;;;;
+142;drive to school;;;;;
+143;get ready to school;;;;;
+144;"Approve
+student loan";;;;;
+145;"Conditionally
+approve
+student loan";;;;;
+146;"Check
+debits";;;;;
+147;"Register
+student loan
+application";;;;;
+148;"Approve
+home loan";;;;;
+149;"Reject
+home loan";;;;;
+150;"Check
+home loan
+application";;;;;
+151;"Register home
+loan
+application";;;;;
+152;Archive supplier invoice;;;;;
+153;Pay invoice;;;;;
+154;Compare invoice with goods received transcript;;;;;
+155;Send invoice back to supplier ;;;;;
+156;Compare invoice with PO;;;;;
+157;Archive interest invoice ;;;;;
+158;Pay interest ;;;;;
+159;Call bank for remaining invoice;;;;;
+160;Call bank;;;;;
+161;Send reminder;;;;;
+162;Archive invoice and activate db alert accounts receivable;;;;;
+163;Make architect invoice and send it  customer ;;;;;
+164;Archive invoice and activate db alert ;;;;;
+165;Archive invoice and activate db alert to accounts receivable;;;;;
+166;Make pre-installation  invoice and send it to customer ;;;;;
+167;Make architect invoice and send it to customer ;;;;;
+168;Ask engineers  to visit;;;;;
+169;Ask architect to do a pre-installation visit;;;;;
+170;Ask architect to visit;;;;;
+171;Contact customer;;;;;
+172;Make estimates ;;;;;
+173;Make new quotation;;;;;
+174;Review remarks ;;;;;
+175;Review customer response;;;;;
+176;Review received information ;;;;;
+177;Send permission request and quotation for drawing up floor plans ;;;;;
+178;Call customer;;;;;
+179;Ask for missing info;;;;;
+180;Add new customer to  database ;;;;;
+181;Archive info;;;;;
+182;Send quotation to customer;;;;;
+183;Make quotation;;;;;
+184;Ask standard information;;;;;
+185;Fill in phone number;;;;;
+186;Fill in the recipient's name;;;;;
+187;Fill in the address;;;;;
+188;Fill in the password;;;;;
+189;Fill in the username;;;;;
+190;Enter CAPTCHA;;;;;
+191;"Get CAPTCHA
+";;;;;
+192;Enter mobile number;;;;;
+193;Ship_to_customer;;;;;
+194;Arrange_payment;;;;;
+195;Process_order;;;;;
+196;Remove customer order;;;;;
+197;Unpack order;;;;;
+198;Update customer data;;;;;
+199;Process digital identification;;;;;
+200;Initiate request;;;;;
+201;Enter portal;;;;;
+202;Select service;;;;;
+203;Enter digital identification;;;;;
+204;"Activity C
+";;;;;
+205;Activity A;;;;;
+206;Validate application;;;;;
+207;Create customer record;;;;;
+208;Formalise customer file;;;;;
+209;Contact for additional information;;;;;
+210;"Investigate
+application document ";;;;;
+211;Record order;;;;;
+212;Prepare order for shiping;;;;;
+213;Generate final list of invitees;;;;;
+214;Shortlist the guests, buyers and celebrities to be invited;;;;;
+215;Post invoice;;;;;
+216;Charge the consultation fee;;;;;
+217;Present the packages to the customer;;;;;
+218;Create the packages ;;;;;
+219;Test on animals;;;;;
+220;START PHASE ONE;;;;;
+221;search for antigen;;;;;
+222;Document Results;;;;;
+223;Define FCM Properties;;;;;
+224;Map variables to concepts;;;;;
+225;Modify claims;;;;;
+226;Schedule payment;;;;;
+227;Authorise repairs ;;;;;
+228;Perform assessment ;;;;;
+229;Reject claim ;;;;;
+230;Check damages;;;;;
+231;Check insurance policy;;;;;
+232;Classify claim;;;;;
+233;Register claim;;;;;
+234;Prepare service request;;;;;
+235;send order;;;;;
+236;others validations;;;;;
+237;validate order;;;;;
+238;recieve order;;;;;
+239;Check customer priority;;;;;
+240;Check delivery dates;;;;;
+241;Check resources&employees;;;;;
+242;Check current production status;;;;;
+243;Order materials;;;;;
+244;Check Materials;;;;;
+245;Check orders;;;;;

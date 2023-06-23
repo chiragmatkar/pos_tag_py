@@ -2,9 +2,6 @@
 # coding: utf-8
 
 # <h1>Stratified KFold cross validation - concatenated datasets</h1>
-
-# In[1]:
-
 import pandas as pd
 import numpy as np
 import csv
@@ -194,7 +191,7 @@ class HMM_R():
         except:
             trellis[:, 0] = np.squeeze(self.initialProb * np.ones((len(self.initialProb), 1)))
 
-        for t in xrange(1, len(obs)):
+        for t in range(1, len(obs)):
             try:
                 T = (trellis[:, t-1, None].dot(self.Obs(obs[t]).T) * self.transProb).max(0)
             except:
@@ -206,7 +203,7 @@ class HMM_R():
             backpt[:, t] = (np.tile(trellis[:, t-1, None], [1, self.N]) * self.transProb).argmax(0)
             
         tokens = [trellis[:, -1].argmax()]
-        for i in xrange(len(obs)-1, 0, -1):
+        for i in range(len(obs)-1, 0, -1):
             tokens.append(backpt[tokens[-1], i])
         return [self.tags[i] for i in tokens[::-1]]
 
@@ -337,8 +334,6 @@ for train,test in tqdm(skf):
         
     CM.append(cm)
 
-
-# In[ ]:
 
 def mean_(means, counts):
     return np.dot(means, counts)/sum(counts)

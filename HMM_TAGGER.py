@@ -6,9 +6,11 @@ import numpy as np
 import re
 import nltk
 nltk.download('averaged_perceptron_tagger')
+nltk.download('wordnet')
 import itertools
 from tqdm import tqdm
 import en
+from en import is_connective
 import os
 from nltk.stem.wordnet import WordNetLemmatizer
 from nltk.stem.porter import PorterStemmer
@@ -38,14 +40,14 @@ def generalize_style(style):
     elif style in NA:
         return 'NA'
 
-xlspath = os.path.join(os.path.dirname(__file__), "target/test_labels_hmm_tagger.xlsx")
+xlspath = os.path.join(os.path.dirname(__file__), "target/test_labels_hmm_tagger2.xlsx")
 data = pd.read_excel(xlspath, keep_default_na=False)
 
 
-data = data[data.Label != '']
-data.Label = map(lambda x: x.strip(','), data.Label)
-data.Split = map(str.split, data.Label)
-data.Split = map(to_lowercase, data.Split)
+#data = data[data.Label != '']
+#data.Label = map(lambda x: x.strip(','), data.Label)
+#data.Split = map(str.split, data.Label)
+#data.Split = map(to_lowercase, data.Split)
 
 
 prepositions = 'aboard about above across after against along amid among anti around as at before behind                 below beneath beside besides between beyond but by concerning considering despite down during                 except excepting excluding following for from in inside into like minus near of off on onto                 opposite outside over past per plus regarding round save since than through to toward towards                 under underneath unlike until up upon versus via with within without'.split()
@@ -88,7 +90,7 @@ conjunctions = 'and but nor or so yet & /'.split()
 #prepositions = 'to with in at by for as'.split()
 
 def process_label(row):
-    label = row.Split
+    label = row['Label']
     style = row.Style
     obj = str(row['Business Object']).split()
     action = row.Action.split()
@@ -98,6 +100,7 @@ def process_label(row):
     indicator = '<>'
     gen_style = generalize_style(style)
     
+    #print("********",label)
     x = iter(label)
     next_word = next(x)
     position = 1
@@ -105,10 +108,10 @@ def process_label(row):
     for word in label:
         store = ''
         next_word = next(x, None)
-        #print 'current word: %s, next word: %s' %(word, next_word)    
+        #print('current word: %s, next word: %s' %(word, next_word))    
         
         if position > 1 and is_number(word):
-            store = str(word + indicator + 'INT' + gen_style + ', ')
+            store = str(str(word) + str(indicator) + 'INT' + str(gen_style) + ', ')
         
         elif previous in two_word_first and word in two_word_second and gen_style == 'VOS':
             store = str(word + indicator + 'VOV-E, ')
@@ -140,8 +143,8 @@ def process_label(row):
         elif word == 'and':
             store = str(word + indicator + 'AND-'+ gen_style +', ')
             
-        elif en.is_connective(word) and word not in not_connectives:
-            store = str(word + indicator +'C-' + gen_style + ', ')
+       # elif is_connective(word) and word not in not_connectives:
+      #      store = str(word + indicator +'C-' + gen_style + ', ')
 
         elif word in obj or word[0:4] in fragment_o:
             store = str(word + indicator + tags[style] +'O, ')
@@ -156,10 +159,11 @@ def process_label(row):
             store = str(word + indicator + tags[style] +'V, ')
         
         elif set('[~!@#$%^*,()-=%_+{}":;\']+$').intersection(word):
-            store = str(word + indicator + 'AD' + gen_style +', ')
+            store = str(word) + str(indicator) + 'AD' + str(gen_style) +', '
         
         else:
-            store = word + indicator + 'misc-' + gen_style + ', '
+            pass
+            #store = word + indicator + 'misc-' + gen_style + ', '
         
         try:
             if en.verb.tense(word) == 'present participle' and previous == 'is':
@@ -178,18 +182,23 @@ def parse_data():
     result = []
     for i in tqdm(range(len(df))):
         #print process_label(df.iloc[i])
+        #print(df.iloc[i])
+        #print("%%%%%%%%%%%%%%%%%%")
+        #print(process_label(df.iloc[i]))
         result.append(process_label(df.iloc[i]))
-
+    #print(result)
+        
             
     
     for j in range(len(df)):
-        df.iloc[j]['Tags'] = result[j]
-    #df.to_csv('CSV/SAP_HMM_BASIC_TAGS_V20.csv', sep=';')
-    df.to_csv('CSV/VODAFONE_HMM_BASIC_TAGS_V20.csv', sep=';')
+       print(result[j])
+        #df.iloc[j]['Tags'] = result[j]
+   # df.to_csv('CSV/SAP_HMM_BASIC_TAGS_V20.csv', sep=';')
+   # df.to_csv('CSV/VODAFONE_HMM_BASIC_TAGS_V20.csv', sep=';')
     #df.to_csv('CSV/AI_HMM_BASIC_TAGS_V20.csv', sep=';')
     #df.to_csv('CSV/COMPLETE_V20.csv', sep=';')
     print('Parsing finished.')
 
-
+#print(df)
 parse_data()
 
