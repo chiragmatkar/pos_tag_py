@@ -40,8 +40,6 @@ def generalize_style(style):
     elif style in NA:
         return 'NA'
 
-xlspath = os.path.join(os.path.dirname(__file__), "target/test_labels_hmm_tagger2.xlsx")
-data = pd.read_excel(xlspath, keep_default_na=False)
 
 
 #data = data[data.Label != '']
@@ -66,8 +64,6 @@ def is_number(s):
     except ValueError:
         return False
 
-columns = ['Label', 'Split', 'Style', 'Action', 'Business Object', 'Tags']
-df = data[columns]
 
 tags = dict({
         'AN_NP': 'ANN',
@@ -181,24 +177,24 @@ def process_label(row):
 def parse_data():
     result = []
     for i in tqdm(range(len(df))):
-        #print process_label(df.iloc[i])
-        #print(df.iloc[i])
-        #print("%%%%%%%%%%%%%%%%%%")
-        #print(process_label(df.iloc[i]))
         result.append(process_label(df.iloc[i]))
-    #print(result)
         
             
-    
     for j in range(len(df)):
        #print(result[j])
         df.iloc[j]['Tags'] = result[j]
     df.to_csv('CSV/SAP_HMM_BASIC_TAGS_V20.csv', sep=';')
-   # df.to_csv('CSV/VODAFONE_HMM_BASIC_TAGS_V20.csv', sep=';')
-    #df.to_csv('CSV/AI_HMM_BASIC_TAGS_V20.csv', sep=';')
-    #df.to_csv('CSV/COMPLETE_V20.csv', sep=';')
     print('Parsing finished.')
 
 #print(df)
-parse_data()
 
+
+
+
+
+if __name__ == "__main__":
+    xlspath = os.path.join(os.path.dirname(__file__), "target/test_labels_hmm_tagger2.xlsx")
+    data = pd.read_excel(xlspath, keep_default_na=False)
+    columns = ['Label', 'Split', 'Style', 'Action', 'Business Object', 'Tags']
+    df = data[columns]
+    parse_data()
