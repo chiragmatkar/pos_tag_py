@@ -10,7 +10,7 @@ nltk.download('wordnet')
 import itertools
 from tqdm import tqdm
 import en
-from en import is_connective
+from en import is_connective_word
 import os
 from nltk.stem.wordnet import WordNetLemmatizer
 from nltk.stem.porter import PorterStemmer
@@ -143,8 +143,8 @@ def process_label(row):
         elif word == 'and':
             store = str(word + indicator + 'AND-'+ gen_style +', ')
             
-       # elif is_connective(word) and word not in not_connectives:
-      #      store = str(word + indicator +'C-' + gen_style + ', ')
+        elif is_connective_word(word) and word not in not_connectives:
+            store = str(word) + str(indicator) +'C-' + str(gen_style) + ', ' 
 
         elif word in obj or word[0:4] in fragment_o:
             store = str(word + indicator + tags[style] +'O, ')
@@ -191,9 +191,9 @@ def parse_data():
             
     
     for j in range(len(df)):
-       print(result[j])
-        #df.iloc[j]['Tags'] = result[j]
-   # df.to_csv('CSV/SAP_HMM_BASIC_TAGS_V20.csv', sep=';')
+       #print(result[j])
+        df.iloc[j]['Tags'] = result[j]
+    df.to_csv('CSV/SAP_HMM_BASIC_TAGS_V20.csv', sep=';')
    # df.to_csv('CSV/VODAFONE_HMM_BASIC_TAGS_V20.csv', sep=';')
     #df.to_csv('CSV/AI_HMM_BASIC_TAGS_V20.csv', sep=';')
     #df.to_csv('CSV/COMPLETE_V20.csv', sep=';')

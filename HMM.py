@@ -12,9 +12,9 @@ from tqdm import tqdm
 from sklearn import metrics
 from auxiliary_functions import * 
 from collections import Counter
-from sklearn.cross_validation import KFold
-from sklearn.cross_validation import train_test_split
-from sklearn.cross_validation import StratifiedKFold
+from sklearn.model_selection import KFold
+from sklearn.model_selection import train_test_split
+from sklearn.model_selection import StratifiedKFold
 
 # Augmentation Functions
 class augmentObject():
@@ -273,18 +273,17 @@ def vote_style(tags,style):
     return max(styles, key=styles.get) 
 
 
-# In[ ]:
-
 OBJECT = 'VOO VOIO misc-VOS ANO ANNO ANIO ANINGO ANOO misc-AN NAO misc-NA DESO misc-DES'.split()
 VOS = ['MODIFIERVOS','3RDSPVOS','VOO','ADVOS','AND-VOS','C-VOS','VOV','misc-VOS','AD_VOS','MISC_VOS','OF-VOS','VOIV','VOIO','OF_VERB-VOS', 'VOV-E']
 AN = ['MODIFIERAN','3RDSPAN','misc-AN','ADAN','AND-AN','OF-AN','C-AN','AN_OF','AD_AN','ANO','ANV', 'ANNO', 'ANNV','ANIO','ANIV','ANINGO','ANOV','ANINGV','ANOO','OF_VERB-AN']
 NA = ['MODIFIERNA','3RDSPNA','NAO','NAV','OF_NA','AND-NA','AD_NA','C-NA','misc-NA','OF-NA','ADNA','OF_VERB-NA',]
 DES = ['MODIFIERDES','3RDSPDES','OF-DES','misc-DES','AD_DES','AND-DES','ADDES','C-DES','DESV','DESO','OF_VERB-DES', 'DESV-P']
 STYLES = ['AN', 'NA', 'VOS', 'DES']
-
+import os
 #Load Dataset and augmentation
-AI = pd.read_csv('CSV/COMPLETE_V19.csv', sep=';', keep_default_na=False)
-AUG = dataToObject(pd.read_csv('CSV/aug_list.csv', sep=';', keep_default_na=False))
+current_path= os.getcwd()
+AI = pd.read_csv(current_path+"/CSV/list_INT.csv", sep=';', keep_default_na=False)
+AUG = dataToObject(pd.read_csv(current_path+'/CSV/aug_list.csv', sep=';', keep_default_na=False))
 AI_objects = dataToObject(AI)
 skf = StratifiedKFold(AI.Style, n_folds=10, random_state=100)
 

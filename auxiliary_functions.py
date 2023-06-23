@@ -1,8 +1,4 @@
 
-# coding: utf-8
-
-# In[1]:
-
 from sklearn.feature_extraction import DictVectorizer
 
 def get_style(prediction):
@@ -71,7 +67,7 @@ def evaluate_errors(X, Y, objects, model):
             error_indices.append(i)
 
     print('The following objects have errors:')
-    print error_indices
+    print(error_indices)
     
     print('\nActual: Predicted:\tLabel:\n')
     

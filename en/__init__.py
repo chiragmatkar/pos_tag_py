@@ -57,7 +57,7 @@ def is_tag(value):
 def is_html_tag(value):
     return is_html_tag(value)
     
-def is_connective(word):
+def is_connective_word(word):
     return is_connective(word)
 
 def is_basic_emotion(word):
